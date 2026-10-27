@@ -8,7 +8,7 @@ A modern, highly responsive, and performance-optimized single-page personal port
 
 ## 🌟 Live Demo & Preview
 
-* **Live Portfolio URL:**https://my-portfolio-jade-beta-35.vercel.app/*
+* **Live Portfolio URL:*https://my-portfolio-jade-beta-35.vercel.app/*
 * **Developer Resume:** Available for direct single-click download via the Hero Section button (`./assets/resume.pdf`).
 
 ---
