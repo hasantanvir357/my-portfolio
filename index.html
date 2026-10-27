@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tanvir Hasan — Frontend Web Developer (React.js & Next.js Specialist). Undergraduate at the University of Dhaka crafting modern, high-performance, responsive web applications."
+    />
+    <meta name="author" content="Tanvir Hasan" />
+    <meta name="theme-color" content="#09090b" />
+    <title>Tanvir Hasan | Frontend Web Developer — React.js &amp; Next.js Specialist</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              night: {
+                950: '#07070c',
+                900: '#0a0a11',
+                850: '#0e0e17',
+                800: '#12121d',
+                700: '#1a1a29',
+              },
+              neon: {
+                cyan: '#22d3ee',
+                violet: '#a78bfa',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              display: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="bg-zinc-950 font-sans text-zinc-300 antialiased selection:bg-cyan-400/20 selection:text-cyan-100">
+    <!-- ============ SVG ICON SPRITE ============ -->
+    <svg aria-hidden="true" class="absolute h-0 w-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+        />
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+        />
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+        />
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+        />
+      </symbol>
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+        />
+      </symbol>
+      <symbol id="icon-external" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        />
+      </symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+        />
+      </symbol>
+      <symbol id="icon-cap" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+        />
+      </symbol>
+      <symbol id="icon-database" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75c0-1.036.84-1.875 1.875-1.875h12.75c1.035 0 1.875.84 1.875 1.875v10.5c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V6.75z"
+        />
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 9.75h16.5M3.75 12.75h16.5M3.75 15.75h16.5"
+        />
+      </symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
+        />
+      </symbol>
+      <symbol id="icon-sparkle" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"
+        />
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+        />
+      </symbol>
+      <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+        />
+      </symbol>
+      <symbol id="icon-send" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+        />
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.5 12.75l6 6 9-13.5"
+        />
+      </symbol>
+      <symbol id="icon-chevron-up" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.5 15.75l7.5-7.5 7.5 7.5"
+        />
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header id="site-header" class="site-header">
+      <nav
+        class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:h-[70px]"
+        aria-label="Primary"
+      >
+        <!-- Brand -->
+        <a href="#home" class="group flex items-center gap-2.5">
+          <span class="brand-mark">TH</span>
+          <span
+            class="font-display text-lg font-semibold tracking-tight text-white transition group-hover:text-cyan-300 sm:text-xl"
+          >
+            Tanvir Hasan
+          </span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="hidden items-center gap-1 lg:flex">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:block">
+          <a
+            href="./assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-resume
+            class="btn btn-primary btn-sm"
+          >
+            <svg class="h-4 w-4"><use href="#icon-download" /></svg>
+            Resume
+          </a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button
+          id="menu-toggle"
+          type="button"
+          class="menu-toggle lg:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="h-6 w-6"><use id="menu-icon" href="#icon-menu" /></svg>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="mobile-menu lg:hidden" hidden>
+        <ul class="mx-auto max-w-6xl space-y-1 px-4 pb-6 pt-2 sm:px-6">
+          <li><a class="mobile-link" href="#home">Home</a></li>
+          <li><a class="mobile-link" href="#about">About</a></li>
+          <li><a class="mobile-link" href="#skills">Skills</a></li>
+          <li><a class="mobile-link" href="#education">Education</a></li>
+          <li><a class="mobile-link" href="#projects">Projects</a></li>
+          <li><a class="mobile-link" href="#contact">Contact</a></li>
+          <li class="pt-3">
+            <a
+              href="./assets/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-resume
+              class="btn btn-primary w-full justify-center"
+            >
+              <svg class="h-4 w-4"><use href="#icon-download" /></svg>
+              Download Resume
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section id="home" class="hero-section">
+        <div class="hero-glow hero-glow-cyan" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-violet" aria-hidden="true"></div>
+
+        <div
+          class="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-28 pb-20 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:pt-36 lg:pb-28"
+        >
+          <!-- Copy -->
+          <div class="reveal">
+            <span class="availability-pill">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Available for freelance &amp; full-time work
+            </span>
+
+            <p class="mt-6 font-display text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
+              Hi there, I&rsquo;m
+            </p>
+
+            <h1
+              class="mt-2 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            >
+              Tanvir Hasan
+            </h1>
+
+            <h2 class="mt-3 font-display text-lg font-semibold text-gradient sm:text-xl lg:text-2xl">
+              Frontend Web Developer
+              <span class="text-zinc-400">(React.js &amp; Next.js Specialist)</span>
+            </h2>
+
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              Passionate Frontend Web Developer and undergraduate student at the
+              <span class="font-medium text-zinc-200">University of Dhaka</span>. I specialize in crafting modern,
+              high-performance, responsive web applications using React.js, Next.js, TypeScript, Tailwind CSS, and
+              Node.js.
+            </p>
+
+            <!-- Actions -->
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="./assets/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-resume
+                class="btn btn-primary"
+              >
+                <svg class="h-5 w-5"><use href="#icon-download" /></svg>
+                Download Resume
+              </a>
+              <a href="#projects" class="btn btn-ghost">
+                View My Work
+                <svg class="h-5 w-5"><use href="#icon-external" /></svg>
+              </a>
+            </div>
+
+            <!-- Socials -->
+            <div class="mt-8 flex items-center gap-3">
+              <a
+                class="social-btn"
+                href="https://github.com/hasantanvir357"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+                title="GitHub"
+              >
+                <svg class="h-5 w-5"><use href="#icon-github" /></svg>
+              </a>
+              <a
+                class="social-btn"
+                href="https://www.linkedin.com/in/tanvirhasan-/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                title="LinkedIn"
+              >
+                <svg class="h-5 w-5"><use href="#icon-linkedin" /></svg>
+              </a>
+              <a class="social-btn" href="mailto:hasantanvir357@gmail.com" aria-label="Send an email" title="Email">
+                <svg class="h-5 w-5"><use href="#icon-mail" /></svg>
+              </a>
+              <span class="ml-1 hidden text-sm text-slate-300 sm:inline"
+                >Let&rsquo;s build something great together.</span
+              >
+            </div>
+          </div>
+
+          <!-- Portrait -->
+          <div class="reveal justify-self-center lg:justify-self-end">
+            <div class="portrait-wrap">
+              <span class="portrait-ring" aria-hidden="true"></span>
+              <div class="portrait-frame">
+                <img
+                  id="hero-photo"
+                  src="./images/profile.png"
+                  data-fallbacks="./images/portfolio.jpg"
+                  alt="Portrait of Tanvir Hasan"
+                  width="440"
+                  height="440"
+                  loading="eager"
+                  class="portrait-img"
+                />
+              </div>
+              <div class="floating-chip floating-chip-top">
+                <svg class="h-4 w-4 text-cyan-300"><use href="#icon-code" /></svg>
+                React.js &amp; Next.js
+              </div>
+              <div class="floating-chip floating-chip-bottom">
+                <svg class="h-4 w-4 text-violet-300"><use href="#icon-sparkle" /></svg>
+                TypeScript · Tailwind
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="mx-auto max-w-6xl px-4 pb-6 sm:px-6">
+          <dl class="stats-strip reveal">
+            <div class="stat-item">
+              <dt class="stat-value">15+</dt>
+              <dd class="stat-label">Technologies mastered</dd>
+            </div>
+            <div class="stat-item">
+              <dt class="stat-value">3+</dt>
+              <dd class="stat-label">Featured projects shipped</dd>
+            </div>
+            <div class="stat-item">
+              <dt class="stat-value">2028</dt>
+              <dd class="stat-label">Expected graduation · DU</dd>
+            </div>
+            <div class="stat-item">
+              <dt class="stat-value">100%</dt>
+              <dd class="stat-label">Commitment to quality</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section-pad">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <header class="section-head reveal">
+            <span class="eyebrow">Get to know me</span>
+            <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+            <p class="section-sub">
+              A quick look at my journey, what drives me, and how I keep growing as a developer.
+            </p>
+          </header>
+
+          <div class="grid gap-6 lg:grid-cols-3">
+            <!-- Journey -->
+            <article class="card card-hover reveal lg:col-span-2">
+              <div class="card-icon card-icon-cyan">
+                <svg class="h-6 w-6"><use href="#icon-sparkle" /></svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-white">My Journey into Frontend</h3>
+              <div class="mt-3 space-y-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                <p>
+                  I started my programming journey with curiosity — first exploring the logic behind everyday websites,
+                  then steadily moving from basic HTML and CSS pages to building real, production-grade applications.
+                  That transition into <strong class="font-medium text-zinc-200">frontend development</strong> became
+                  the turning point of my career: I discovered that clean code and thoughtful design can genuinely
+                  improve people&rsquo;s daily lives.
+                </p>
+                <p>
+                  Today I focus on building
+                  <strong class="font-medium text-zinc-200">scalable web applications with React &amp; Next.js</strong>
+                  — using the App Router, server components, and TypeScript to keep codebases maintainable and fast.
+                  Along the way I have deepened my understanding of
+                  <strong class="font-medium text-zinc-200">UI/UX principles</strong>, accessible component design,
+                  responsive layout systems, and
+                  <strong class="font-medium text-zinc-200">state management</strong> patterns that scale from simple
+                  hooks to complex application stores.
+                </p>
+                <p>
+                  To become a well-rounded developer, I also picked up the
+                  <strong class="font-medium text-zinc-200">backend basics with Node.js &amp; Express</strong> —
+                  designing REST APIs, working with MongoDB Atlas, and handling authentication flows. Understanding the
+                  full picture makes my frontend work sharper, more realistic, and easier to integrate.
+                </p>
+              </div>
+            </article>
+
+            <!-- Interests -->
+            <div class="space-y-6">
+              <article class="card card-hover reveal">
+                <div class="card-icon card-icon-violet">
+                  <svg class="h-6 w-6"><use href="#icon-lightbulb" /></svg>
+                </div>
+                <h3 class="mt-4 font-display text-lg font-semibold text-white">Interests &amp; Hobbies</h3>
+                <ul class="mt-3 space-y-2.5 text-sm text-zinc-400">
+                  <li class="interest-item">
+                    <span class="interest-dot"></span>Logical problem-solving &amp; DSA puzzles
+                  </li>
+                  <li class="interest-item"><span class="interest-dot"></span>UI design refinement and pixel polish</li>
+                  <li class="interest-item">
+                    <span class="interest-dot"></span>Tech video editing &amp; motion graphics
+                  </li>
+                  <li class="interest-item"><span class="interest-dot"></span>Continuous learning of new web tech</li>
+                </ul>
+              </article>
+
+              <article class="card card-hover reveal">
+                <div class="card-icon card-icon-cyan">
+                  <svg class="h-6 w-6"><use href="#icon-heart" /></svg>
+                </div>
+                <h3 class="mt-4 font-display text-lg font-semibold text-white">What I value</h3>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+                  Clean architecture, honest communication, and shipping work I am proud to put my name on.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section id="skills" class="section-pad">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <header class="section-head reveal">
+            <span class="eyebrow">What I work with</span>
+            <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+            <p class="section-sub">
+              A categorized overview of the technologies I use daily to design, build and ship products.
+            </p>
+          </header>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <!-- Frontend -->
+            <article class="skills-card reveal">
+              <div class="skills-card-head">
+                <div class="card-icon card-icon-cyan">
+                  <svg class="h-6 w-6"><use href="#icon-code" /></svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">Frontend</h3>
+                  <p class="text-xs text-zinc-300">UI engineering &amp; styling</p>
+                </div>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-chip">
+                  <div class="skill-top"><span>HTML5</span><span class="skill-level">95%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 95%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>CSS3</span><span class="skill-level">92%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 92%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>JavaScript (ES6+)</span><span class="skill-level">90%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 90%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>TypeScript</span><span class="skill-level">85%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 85%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>React.js</span><span class="skill-level">92%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 92%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Next.js (App Router)</span><span class="skill-level">88%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 88%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Tailwind CSS</span><span class="skill-level">94%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 94%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>DaisyUI</span><span class="skill-level">86%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 86%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Bootstrap</span><span class="skill-level">80%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 80%"></span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Backend & DB -->
+            <article class="skills-card reveal">
+              <div class="skills-card-head">
+                <div class="card-icon card-icon-violet">
+                  <svg class="h-6 w-6"><use href="#icon-database" /></svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">Backend &amp; DB</h3>
+                  <p class="text-xs text-zinc-300">Server, APIs &amp; data</p>
+                </div>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Node.js</span><span class="skill-level">82%</span></div>
+                  <div class="skill-track"><span class="skill-fill fill-violet" style="--level: 82%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Express.js</span><span class="skill-level">80%</span></div>
+                  <div class="skill-track"><span class="skill-fill fill-violet" style="--level: 80%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>MongoDB Atlas</span><span class="skill-level">78%</span></div>
+                  <div class="skill-track"><span class="skill-fill fill-violet" style="--level: 78%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Better Auth</span><span class="skill-level">75%</span></div>
+                  <div class="skill-track"><span class="skill-fill fill-violet" style="--level: 75%"></span></div>
+                </div>
+              </div>
+              <p
+                class="mt-5 rounded-xl border border-white/5 bg-white/[0.03] p-3 text-xs leading-relaxed text-zinc-300"
+              >
+                Comfortable designing REST endpoints, modelling data in Atlas and wiring secure session-based
+                authentication.
+              </p>
+            </article>
+
+            <!-- Tools & Workflow -->
+            <article class="skills-card reveal md:col-span-2 xl:col-span-1">
+              <div class="skills-card-head">
+                <div class="card-icon card-icon-cyan">
+                  <svg class="h-6 w-6"><use href="#icon-briefcase" /></svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">Tools &amp; Workflow</h3>
+                  <p class="text-xs text-zinc-300">Daily developer toolkit</p>
+                </div>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Git</span><span class="skill-level">85%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 85%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>GitHub</span><span class="skill-level">88%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 88%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>VS Code</span><span class="skill-level">95%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 95%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Vite</span><span class="skill-level">84%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 84%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Vercel</span><span class="skill-level">86%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 86%"></span></div>
+                </div>
+                <div class="skill-chip">
+                  <div class="skill-top"><span>Netlify</span><span class="skill-level">84%</span></div>
+                  <div class="skill-track"><span class="skill-fill" style="--level: 84%"></span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section id="education" class="section-pad">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <header class="section-head reveal">
+            <span class="eyebrow">Academic background</span>
+            <h2 class="section-title">Educational <span class="text-gradient">Qualification</span></h2>
+            <p class="section-sub">
+              Formal academics at the University of Dhaka, parallel with dedicated self-driven technical learning.
+            </p>
+          </header>
+
+          <div class="timeline">
+            <!-- Degree -->
+            <article class="timeline-item reveal">
+              <span class="timeline-marker" aria-hidden="true"></span>
+              <div class="card card-hover">
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                  <div class="flex items-start gap-4">
+                    <div class="card-icon card-icon-cyan shrink-0">
+                      <svg class="h-6 w-6"><use href="#icon-cap" /></svg>
+                    </div>
+                    <div>
+                      <p class="eyebrow !mb-1">2024 &mdash; 2028</p>
+                      <h3 class="font-display text-lg font-semibold text-white sm:text-xl">
+                        Bachelor of Arts (B.A.) Honours
+                      </h3>
+                      <p class="mt-1 text-sm text-cyan-300">The University of Dhaka</p>
+                    </div>
+                  </div>
+                  <span class="status-badge">3rd Year</span>
+                </div>
+
+                <p class="mt-4 text-sm leading-relaxed text-zinc-400">
+                  Currently progressing through my <strong class="font-medium text-zinc-200">3rd year</strong> with an
+                  expected graduation in <strong class="font-medium text-zinc-200">2028</strong>. Alongside my
+                  humanities coursework I maintain a disciplined study routine in computer science concepts, maintaining
+                  a healthy balance between academic excellence and hands-on software building.
+                </p>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="tag">Expected Graduation · 2028</span>
+                  <span class="tag">Academic Excellence</span>
+                  <span class="tag">Campus Tech Community</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Technical learning -->
+            <article class="timeline-item reveal">
+              <span class="timeline-marker marker-violet" aria-hidden="true"></span>
+              <div class="card card-hover">
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                  <div class="flex items-start gap-4">
+                    <div class="card-icon card-icon-violet shrink-0">
+                      <svg class="h-6 w-6"><use href="#icon-code" /></svg>
+                    </div>
+                    <div>
+                      <p class="eyebrow !mb-1 !text-violet-300">Ongoing &middot; Self-directed</p>
+                      <h3 class="font-display text-lg font-semibold text-white sm:text-xl">
+                        Dedicated Technical Learning
+                      </h3>
+                      <p class="mt-1 text-sm text-violet-300">Frontend Engineering Track</p>
+                    </div>
+                  </div>
+                  <span class="status-badge badge-violet">Continuous</span>
+                </div>
+
+                <p class="mt-4 text-sm leading-relaxed text-zinc-400">
+                  A structured, self-driven program covering modern frontend architecture — React hooks and state
+                  management, Next.js App Router patterns, TypeScript generics, Tailwind &amp; DaisyUI design systems,
+                  plus Node.js, Express and MongoDB Atlas on the backend. Reinforced daily through real projects,
+                  documentation and technical video breakdowns.
+                </p>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="tag">React &amp; Next.js</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Node.js &amp; Express</span>
+                  <span class="tag">UI/UX Design</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="section-pad">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <header class="section-head reveal">
+            <span class="eyebrow">Selected work</span>
+            <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+            <p class="section-sub">
+              Three shipped applications — open the details dialog to explore the stack, challenges and roadmap.
+            </p>
+          </header>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <!-- Project 1 -->
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="./project-1/Screenshot 2026-10-27 104603.png"
+                  alt="BazarDor market price tracking app screenshot"
+                  loading="lazy"
+                />
+                <span class="project-index">01</span>
+              </div>
+              <div class="project-body">
+                <h3 class="font-display text-lg font-semibold text-white">BazarDor</h3>
+                <p class="project-kind">Market Price Tracking App</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  <span class="tech-badge">Next.js</span>
+                  <span class="tech-badge">Better Auth</span>
+                  <span class="tech-badge">MongoDB Atlas</span>
+                  <span class="tech-badge">Tailwind CSS</span>
+                  <span class="tech-badge">Vercel</span>
+                </div>
+                <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-zinc-400">
+                  A comprehensive market price tracking web application featuring Bengali numeral dynamic sorting,
+                  category filters, live ticker marquee, and user authentication.
+                </p>
+                <button type="button" class="btn btn-ghost btn-block mt-5" data-project="1">
+                  View Details
+                  <svg class="h-4 w-4"><use href="#icon-external" /></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="./project-2/Screenshot 2026-10-27 105735.png"
+                  alt="Product Cart and E-Commerce Showcase screenshot"
+                  loading="lazy"
+                />
+                <span class="project-index">02</span>
+              </div>
+              <div class="project-body">
+                <h3 class="font-display text-lg font-semibold text-white">Product Cart &amp; E-Commerce Showcase</h3>
+                <p class="project-kind">Dynamic Shopping Cart System</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  <span class="tech-badge">React 19</span>
+                  <span class="tech-badge">TypeScript</span>
+                  <span class="tech-badge">Tailwind CSS</span>
+                  <span class="tech-badge">Vite</span>
+                  <span class="tech-badge">Netlify</span>
+                </div>
+                <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-zinc-400">
+                  A dynamic e-commerce product showcase and shopping cart system with real-time price calculation, state
+                  persistence, and responsive UI.
+                </p>
+                <button type="button" class="btn btn-ghost btn-block mt-5" data-project="2">
+                  View Details
+                  <svg class="h-4 w-4"><use href="#icon-external" /></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card reveal md:col-span-2 xl:col-span-1">
+              <div class="project-media">
+                <img
+                  src="./project-3/Screenshot 2026-10-27 104317.png"
+                  alt="Fitness and Workout Planner screenshot"
+                  loading="lazy"
+                />
+                <span class="project-index">03</span>
+              </div>
+              <div class="project-body">
+                <h3 class="font-display text-lg font-semibold text-white">Fitness &amp; Workout Planner</h3>
+                <p class="project-kind">Daily Workout Plan Manager</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  <span class="tech-badge">Next.js</span>
+                  <span class="tech-badge">TypeScript</span>
+                  <span class="tech-badge">DaisyUI</span>
+                  <span class="tech-badge">Tailwind CSS</span>
+                  <span class="tech-badge">Vercel</span>
+                </div>
+                <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-zinc-400">
+                  An interactive daily workout plan manager featuring sorting controls, exercise filters, local storage
+                  state persistence, and responsive controls.
+                </p>
+                <button type="button" class="btn btn-ghost btn-block mt-5" data-project="3">
+                  View Details
+                  <svg class="h-4 w-4"><use href="#icon-external" /></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section-pad">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <header class="section-head reveal">
+            <span class="eyebrow">Say hello</span>
+            <h2 class="section-title">Get in <span class="text-gradient">Touch</span></h2>
+            <p class="section-sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
+          </header>
+
+          <div class="grid gap-6 lg:grid-cols-5">
+            <!-- Contact info -->
+            <div class="space-y-4 lg:col-span-2">
+              <a href="mailto:hasantanvir357@gmail.com" class="contact-card reveal">
+                <div class="card-icon card-icon-cyan">
+                  <svg class="h-5 w-5"><use href="#icon-mail" /></svg>
+                </div>
+                <div>
+                  <p class="contact-label">Email</p>
+                  <p class="contact-value">hasantanvir357@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="tel:+8801521714141" class="contact-card reveal">
+                <div class="card-icon card-icon-violet">
+                  <svg class="h-5 w-5"><use href="#icon-phone" /></svg>
+                </div>
+                <div>
+                  <p class="contact-label">Phone</p>
+                  <p class="contact-value">+880 1521714141</p>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/8801521714141"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card reveal"
+              >
+                <div class="card-icon card-icon-green">
+                  <svg class="h-5 w-5"><use href="#icon-whatsapp" /></svg>
+                </div>
+                <div>
+                  <p class="contact-label">WhatsApp</p>
+                  <p class="contact-value">+880 1521714141 &middot; Click to chat</p>
+                </div>
+              </a>
+
+              <div class="card reveal p-5">
+                <h3 class="font-display text-base font-semibold text-white">Quick response</h3>
+                <p class="mt-2 text-sm leading-relaxed text-zinc-400">
+                  I usually reply within a few hours during daytime (GMT+6). For urgent work, WhatsApp is the fastest
+                  way to reach me.
+                </p>
+              </div>
+            </div>
+
+            <!-- Form -->
+            <div class="card reveal lg:col-span-3">
+              <h3 class="font-display text-lg font-semibold text-white">Send me a message</h3>
+              <p class="mt-1 text-sm text-zinc-400">Fill in the form below and I&rsquo;ll get back to you soon.</p>
+
+              <form id="contact-form" class="mt-6 space-y-5" novalidate>
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div class="field">
+                    <label for="cf-name" class="field-label">Name <span class="text-cyan-400">*</span></label>
+                    <input
+                      id="cf-name"
+                      name="name"
+                      type="text"
+                      class="field-input"
+                      placeholder="Your full name"
+                      autocomplete="name"
+                      required
+                    />
+                    <p class="field-error" data-error-for="cf-name"></p>
+                  </div>
+                  <div class="field">
+                    <label for="cf-email" class="field-label">Email <span class="text-cyan-400">*</span></label>
+                    <input
+                      id="cf-email"
+                      name="email"
+                      type="email"
+                      class="field-input"
+                      placeholder="you@example.com"
+                      autocomplete="email"
+                      required
+                    />
+                    <p class="field-error" data-error-for="cf-email"></p>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="cf-message" class="field-label">Message <span class="text-cyan-400">*</span></label>
+                  <textarea
+                    id="cf-message"
+                    name="message"
+                    rows="5"
+                    class="field-input resize-y"
+                    placeholder="Tell me about your project, timeline and budget..."
+                    required
+                  ></textarea>
+                  <p class="field-error" data-error-for="cf-message"></p>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full justify-center sm:w-auto">
+                  <svg class="h-5 w-5"><use href="#icon-send" /></svg>
+                  Send Message
+                </button>
+                <p id="form-status" class="field-error" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+        <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <div class="text-center md:text-left">
+            <a href="#home" class="inline-flex items-center gap-2.5">
+              <span class="brand-mark">TH</span>
+              <span class="font-display text-lg font-semibold text-white">Tanvir Hasan</span>
+            </a>
+            <p class="mt-2 text-sm text-slate-300">Frontend Web Developer &middot; React.js &amp; Next.js Specialist</p>
+          </div>
+
+          <nav aria-label="Footer">
+            <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+              <li><a class="footer-link" href="#home">Home</a></li>
+              <li><a class="footer-link" href="#about">About</a></li>
+              <li><a class="footer-link" href="#skills">Skills</a></li>
+              <li><a class="footer-link" href="#education">Education</a></li>
+              <li><a class="footer-link" href="#projects">Projects</a></li>
+              <li><a class="footer-link" href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a
+              class="social-btn social-btn-sm"
+              href="https://github.com/hasantanvir357"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <svg class="h-4 w-4"><use href="#icon-github" /></svg>
+            </a>
+            <a
+              class="social-btn social-btn-sm"
+              href="https://www.linkedin.com/in/tanvirhasan-/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <svg class="h-4 w-4"><use href="#icon-linkedin" /></svg>
+            </a>
+            <a class="social-btn social-btn-sm" href="mailto:hasantanvir357@gmail.com" aria-label="Email">
+              <svg class="h-4 w-4"><use href="#icon-mail" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-white/5 pt-6 text-center">
+          <p class="text-sm text-zinc-400">
+            &copy; <span id="current-year">2026</span> Tanvir Hasan. All rights reserved. Crafted with
+            <span class="text-cyan-400">React mindset</span> &amp; lots of <span class="text-violet-400">coffee</span>.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ PROJECT MODAL ============ -->
+    <div id="project-modal" class="modal" aria-hidden="true" hidden>
+      <div class="modal-backdrop" data-modal-close tabindex="-1"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="modal-close" data-modal-close aria-label="Close project details">
+          <svg class="h-5 w-5"><use href="#icon-close" /></svg>
+        </button>
+        <div id="modal-content" class="modal-content"></div>
+      </div>
+    </div>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button id="back-to-top" type="button" class="back-to-top" aria-label="Back to top" hidden>
+      <svg class="h-5 w-5"><use href="#icon-chevron-up" /></svg>
+    </button>
+
+    <!-- ============ TOAST ============ -->
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+      <svg class="h-5 w-5 shrink-0 text-cyan-300"><use href="#icon-check" /></svg>
+      <span id="toast-message"></span>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
