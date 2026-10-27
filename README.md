@@ -2,13 +2,11 @@
 
 A modern, highly responsive, and performance-optimized single-page personal portfolio website built with clean code architecture. Features a premium dark-mode aesthetic with neon cyan and violet accents, glassmorphic UI elements, dynamic modals, and seamless interactive navigation.
 
-![Portfolio Banner](./assets/images/profile.png)
-
 ---
 
 ## 🌟 Live Demo & Preview
 
-* **Live Portfolio URL:*https://my-portfolio-jade-beta-35.vercel.app/*
+* **Live Portfolio URL:** [https://my-portfolio-jade-beta-35.vercel.app/](https://my-portfolio-jade-beta-35.vercel.app/)
 * **Developer Resume:** Available for direct single-click download via the Hero Section button (`./assets/resume.pdf`).
 
 ---
@@ -16,10 +14,10 @@ A modern, highly responsive, and performance-optimized single-page personal port
 ## 🛠️ Tech Stack & Dependencies
 
 * **Frontend Architecture:** HTML5, Tailwind CSS (via CDN)
-* **Styling & Effects:** Custom CSS variables, Glassmorphism, Tailwind CSS Utility Classes
+* **Styling & Effects:** Custom CSS variables, Glassmorphic Design, Tailwind CSS Utility Classes
 * **Scripting & Interactivity:** Vanilla JavaScript (ES6+)
 * **Icons & Assets:** Custom SVG Symbols & Responsive Image Assets
-* **Deployment & Tooling:** Git, GitHub, Vercel / Netlify
+* **Deployment & Tooling:** Git, GitHub, Vercel Deployment
 
 ---
 
@@ -32,7 +30,7 @@ A modern, highly responsive, and performance-optimized single-page personal port
 * Social media quick-links (GitHub, LinkedIn, Email) with refined UI hover states.
 
 ### 2. 👤 About Me & Core Journey
-* Concise overview of academic progression at **The University of Dhaka**.
+* Academic progression overview at **The University of Dhaka**.
 * Detailed narrative of frontend engineering focus (React.js, Next.js) alongside basic backend exploration (Node.js, Express, MongoDB).
 * Structured key metrics displaying technologies mastered, projects shipped, and commitment to quality.
 
@@ -47,9 +45,9 @@ A modern, highly responsive, and performance-optimized single-page personal port
 
 ### 5. 📂 Featured Projects Showcase
 * Comprehensive cards showcasing three production-grade web applications:
-  1. **BazarDor (বাজার দর):** Market Price Tracker with Better Auth & MongoDB.
-  2. **Product Cart Showcase:** Dynamic E-Commerce cart using React 19 & TypeScript.
-  3. **Fitness & Workout Planner:** Interactive exercise manager built with Next.js & DaisyUI.
+  * **BazarDor (বাজার দর):** Market Price Tracker with Better Auth & MongoDB.
+  * **Product Cart Showcase:** Dynamic E-Commerce cart using React 19 & TypeScript.
+  * **Fitness & Workout Planner:** Interactive exercise manager built with Next.js & DaisyUI.
 * **Dynamic Details Modal:** Single-click pop-up displaying deep-dive insights including key features, technical stack, development challenges, live links, and GitHub repositories.
 
 ### 6. 📬 Contact & Communication Setup
@@ -59,7 +57,7 @@ A modern, highly responsive, and performance-optimized single-page personal port
 
 ---
 
-## 📂 Project Directory Structure
+## 📁 Project Directory Structure
 
 ```text
 My-Portfolio/
