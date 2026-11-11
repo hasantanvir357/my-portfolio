@@ -78,7 +78,7 @@
     });
 
     // Reset the drawer when switching to desktop widths
-    const desktopQuery = window.matchMedia('(min-width: 1024px)');
+    const desktopQuery = window.matchMedia('(min-width: 768px)');
     const handleResize = (event) => {
       if (event.matches) setMobileMenu(false);
     };
@@ -188,7 +188,7 @@
 
   /* ------------------------------------------------------------------------
      7. Avatar fallback chain
-     assets/images/profile.png → images/portfolio.jpg → generated initials art
+     images/profile.png → images/portfolio.jpg → generated initials art
      ------------------------------------------------------------------------ */
   const heroPhoto = $('#hero-photo');
 
@@ -197,10 +197,10 @@
       `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">` +
       `<defs>` +
       `<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">` +
-      `<stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#160f2b"/>` +
+      `<stop offset="0%" stop-color="#101012"/><stop offset="100%" stop-color="#18181b"/>` +
       `</linearGradient>` +
       `<linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">` +
-      `<stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#a78bfa"/>` +
+      `<stop offset="0%" stop-color="#e4e4e7"/><stop offset="100%" stop-color="#a1a1aa"/>` +
       `</linearGradient>` +
       `</defs>` +
       `<rect width="600" height="600" fill="url(#bg)"/>` +
@@ -237,8 +237,8 @@
 
   /* ------------------------------------------------------------------------
      8. Resume link safety check
-     Downloads ./assets/resume.pdf; if it is missing on a hosted build we warn
-     the user instead of letting them land on a broken 404 tab.
+     Opens ./assets/Tanvir Hasan - Resume.pdf in a new tab; if it is missing
+     on a hosted build we warn the user instead of landing on a broken 404 tab.
      ------------------------------------------------------------------------ */
   $$('[data-resume]').forEach((link) => {
     link.addEventListener('click', async (event) => {
@@ -252,7 +252,7 @@
         // fetch is blocked on the file:// protocol — allow the default action there.
         if (window.location.protocol !== 'file:') {
           event.preventDefault();
-          showToast('Resume file not found. Please add it at assets/resume.pdf.', 'error');
+          showToast('Resume file not found. Please add it at assets/Tanvir Hasan - Resume.pdf.', 'error');
         }
       }
     });
@@ -264,36 +264,61 @@
   const PROJECTS = [
     {
       id: 1,
+      title: 'ServeTogether',
+      subtitle: 'Volunteer & Social Service Platform',
+      image: './project-1/project1.png',
+      monogram: 'ST',
+      alt: 'ServeTogether volunteer and social service platform preview',
+      tech: ['Next.js 15', 'BetterAuth', 'Tailwind CSS', 'Express.js', 'MongoDB', 'JWT'],
+      description:
+        'A full-stack volunteer and social service event management platform built with Next.js 15, Express, BetterAuth, and JWT-secured REST APIs.',
+      highlights: [
+        'Event creation and management with role-based access for volunteers and organizers',
+        'Secure authentication and protected routes powered by BetterAuth and JWT-secured REST APIs',
+        'Express.js + MongoDB backend handling events, volunteers and participation data',
+        'Fully responsive Next.js 15 App Router client deployed on Vercel'
+      ],
+      challenges:
+        'Coordinating separate client and server repositories with JWT-based session handling and role-based route protection.',
+      future:
+        'Adding real-time notifications, volunteer hour tracking and an organizer analytics dashboard.',
+      live: 'https://serve-together-client.vercel.app',
+      repo: 'https://github.com/hasantanvir357/serve-together-client',
+      repoLabel: 'Client Repo',
+      server: 'https://github.com/hasantanvir357/serve-together-server'
+    },
+    {
+      id: 2,
       title: 'BazarDor',
       subtitle: 'Market Price Tracking App',
       image: './project-1/Screenshot 2026-10-27 104603.png',
       alt: 'BazarDor market price tracking app screenshot',
-      tech: ['Next.js', 'Better Auth', 'MongoDB Atlas', 'Tailwind CSS', 'Vercel'],
+      tech: ['Next.js', 'BetterAuth', 'MongoDB Atlas', 'Tailwind CSS', 'Vercel'],
       description:
-        'A comprehensive market price tracking web application featuring Bengali numeral dynamic sorting, category filters, live ticker marquee, and user authentication.',
+        'Market price tracking web application featuring Bengali numeral dynamic sorting, category filters, and live market updates.',
       highlights: [
         'Dynamic sorting engine that correctly orders prices written in Bengali numerals (০–৯)',
         'Category filters with instant client-side re-rendering and an animated live ticker marquee',
-        'Secure session-based authentication powered by Better Auth with MongoDB Atlas persistence',
+        'Secure session-based authentication powered by BetterAuth with MongoDB Atlas persistence',
         'Fully responsive, SEO-friendly Next.js App Router build deployed on Vercel'
       ],
       challenges:
-        'Managing complex session state with Better Auth and crafting custom sorting algorithms for Bengali numerals.',
+        'Managing complex session state with BetterAuth and crafting custom sorting algorithms for Bengali numerals.',
       future:
         'Implementing real-time price trend graphs and vendor comparison models.',
       live: 'https://bazardorapp.netlify.app/',
       repo: 'https://github.com/hasantanvir357/seventh-assignment',
-      repoLabel: 'Client Repository'
+      repoLabel: 'Client Repo'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Product Cart & E-Commerce Showcase',
       subtitle: 'Dynamic Shopping Cart System',
       image: './project-2/Screenshot 2026-10-27 105735.png',
       alt: 'Product Cart and E-Commerce Showcase screenshot',
       tech: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'Netlify'],
       description:
-        'A dynamic e-commerce product showcase and shopping cart system with real-time price calculation, state persistence, and responsive UI.',
+        'Dynamic e-commerce product showcase and shopping cart system with real-time price calculation and state persistence.',
       highlights: [
         'Product catalogue rendered from typed data with category and price sorting controls',
         'Real-time cart math (quantities, subtotals and grand total) driven by reducer-based state',
@@ -305,29 +330,7 @@
       future: 'Adding live payment gateway integration and user review options.',
       live: 'https://creative-taiyaki-fba2bf.netlify.app/',
       repo: 'https://github.com/hasantanvir357/fifth-assignment',
-      repoLabel: 'Client Repository'
-    },
-    {
-      id: 3,
-      title: 'Fitness & Workout Planner',
-      subtitle: 'Daily Workout Plan Manager',
-      image: './project-3/Screenshot 2026-10-27 104317.png',
-      alt: 'Fitness and Workout Planner screenshot',
-      tech: ['Next.js', 'TypeScript', 'DaisyUI', 'Tailwind CSS', 'Vercel'],
-      description:
-        'An interactive daily workout plan manager featuring sorting controls, exercise filters, local storage state persistence, and responsive controls.',
-      highlights: [
-        'Daily plan builder with add / remove / reorder controls for every exercise',
-        'Multi-criteria filters (muscle group, difficulty, equipment) with sorting controls',
-        'Local storage persistence keeps the routine available between visits',
-        'DaisyUI themed dark interface that stays crisp from mobile to widescreen'
-      ],
-      challenges:
-        'Designing intuitive filter mechanisms and handling dynamic workout routine state efficiently.',
-      future: 'Adding a daily calorie counter and interactive exercise timer.',
-      live: 'https://assignment-6-delta-eight.vercel.app/',
-      repo: 'https://github.com/hasantanvir357/assignment-6',
-      repoLabel: 'Client Repository'
+      repoLabel: 'Client Repo'
     }
   ];
 
@@ -339,10 +342,12 @@
     const techBadges = project.tech.map((item) => `<span class="tech-badge">${item}</span>`).join('');
     const highlights = project.highlights.map((item) => `<li>${item}</li>`).join('');
 
+    const heroMarkup = project.image
+      ? `<div class="modal-hero"><img src="${project.image}" alt="${project.alt}" loading="lazy" /></div>`
+      : `<div class="modal-hero modal-hero-empty"><span class="project-monogram">${project.monogram}</span></div>`;
+
     modalContent.innerHTML = `
-      <div class="modal-hero">
-        <img src="${project.image}" alt="${project.alt}" loading="lazy" />
-      </div>
+      ${heroMarkup}
       <div class="mt-5 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h3 id="modal-title" class="modal-title">${project.title}</h3>
@@ -382,6 +387,14 @@
           <svg class="h-5 w-5"><use href="#icon-github"></use></svg>
           ${project.repoLabel}
         </a>
+        ${
+          project.server
+            ? `<a href="${project.server}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <svg class="h-5 w-5"><use href="#icon-database"></use></svg>
+          Server Repo
+        </a>`
+            : ''
+        }
       </div>
     `;
   }
