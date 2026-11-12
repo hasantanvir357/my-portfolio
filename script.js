@@ -35,13 +35,12 @@
     toastMessageEl.textContent = message;
     toastEl.classList.toggle('is-error', variant === 'error');
     toastEl.hidden = false;
-    // Restart the entrance animation
-    toastEl.style.animation = 'none';
-    void toastEl.offsetWidth;
-    toastEl.style.animation = '';
+    // Trigger the entrance transition
+    requestAnimationFrame(() => toastEl.classList.add('show'));
 
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
+      toastEl.classList.remove('show');
       toastEl.hidden = true;
     }, 4200);
   }
@@ -170,7 +169,7 @@
       (entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
+          entry.target.classList.add('in-view');
           observer.unobserve(entry.target);
         });
       },
@@ -183,12 +182,12 @@
       revealObserver.observe(item);
     });
   } else {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
+    revealItems.forEach((item) => item.classList.add('in-view'));
   }
 
   /* ------------------------------------------------------------------------
      7. Avatar fallback chain
-     images/profile.png → images/portfolio.jpg → generated initials art
+     images/profile.png → generated initials art
      ------------------------------------------------------------------------ */
   const heroPhoto = $('#hero-photo');
 
@@ -218,7 +217,6 @@
       .filter(Boolean);
     fallbacks.push(buildInitialsAvatar('TH'));
     let attempt = 0;
-
     function tryNextFallback() {
       if (attempt >= fallbacks.length) return false;
       heroPhoto.src = fallbacks[attempt++];
@@ -266,12 +264,12 @@
       id: 1,
       title: 'ServeTogether',
       subtitle: 'Volunteer & Social Service Platform',
-      image: './project-1/project1.png',
+      image: './images/project-1.png',
       monogram: 'ST',
       alt: 'ServeTogether volunteer and social service platform preview',
       tech: ['Next.js 15', 'BetterAuth', 'Tailwind CSS', 'Express.js', 'MongoDB', 'JWT'],
       description:
-        'A full-stack volunteer and social service event management platform built with Next.js 15, Express, BetterAuth, and JWT-secured REST APIs.',
+        'Full-stack volunteer and social service event management platform built with Next.js 15, Express, BetterAuth, and JWT.',
       highlights: [
         'Event creation and management with role-based access for volunteers and organizers',
         'Secure authentication and protected routes powered by BetterAuth and JWT-secured REST APIs',
@@ -282,20 +280,20 @@
         'Coordinating separate client and server repositories with JWT-based session handling and role-based route protection.',
       future:
         'Adding real-time notifications, volunteer hour tracking and an organizer analytics dashboard.',
-      live: 'https://serve-together-client.vercel.app',
+      live: 'https://serve-together-client.vercel.app/',
       repo: 'https://github.com/hasantanvir357/serve-together-client',
-      repoLabel: 'Client Repo',
+      repoLabel: 'Client GitHub',
       server: 'https://github.com/hasantanvir357/serve-together-server'
     },
     {
       id: 2,
       title: 'BazarDor',
       subtitle: 'Market Price Tracking App',
-      image: './project-1/Screenshot 2026-10-27 104603.png',
+      image: './images/project-2.png',
       alt: 'BazarDor market price tracking app screenshot',
       tech: ['Next.js', 'BetterAuth', 'MongoDB Atlas', 'Tailwind CSS', 'Vercel'],
       description:
-        'Market price tracking web application featuring Bengali numeral dynamic sorting, category filters, and live market updates.',
+        'Market price tracking web application featuring dynamic sorting, category filters, and live updates.',
       highlights: [
         'Dynamic sorting engine that correctly orders prices written in Bengali numerals (০–৯)',
         'Category filters with instant client-side re-rendering and an animated live ticker marquee',
@@ -308,20 +306,45 @@
         'Implementing real-time price trend graphs and vendor comparison models.',
       live: 'https://bazardorapp.netlify.app/',
       repo: 'https://github.com/hasantanvir357/seventh-assignment',
-      repoLabel: 'Client Repo'
+      repoLabel: 'GitHub'
     },
     {
       id: 3,
-      title: 'Product Cart & E-Commerce Showcase',
-      subtitle: 'Dynamic Shopping Cart System',
-      image: './project-2/Screenshot 2026-10-27 105735.png',
-      alt: 'Product Cart and E-Commerce Showcase screenshot',
+      title: 'Assignment 6 Web Application',
+      subtitle: 'Modern Full-Stack Web App',
+      image: './images/project-3.png',
+      monogram: 'A6',
+      alt: 'Assignment 6 Web Application screenshot',
+      tech: ['Full-Stack', 'Responsive UI', 'Dynamic Data', 'REST APIs'],
+      description:
+        'Modern full-stack web application built with responsive UI and dynamic data handling.',
+      highlights: [
+        'Responsive interface that adapts smoothly across mobile, tablet and desktop breakpoints',
+        'Dynamic data handling with content rendered from structured data and REST endpoints',
+        'Clean component structure with reusable UI primitives and consistent styling',
+        'Fast static deployment with a production-optimized build'
+      ],
+      challenges:
+        'Keeping the data flow predictable across views while maintaining a fast, responsive layout on every screen size.',
+      future:
+        'Adding richer filtering, improved error states and further performance optimizations.',
+      live: 'https://assignment-6-delta-eight.vercel.app/',
+      repo: 'https://github.com/hasantanvir357/assignment-6',
+      repoLabel: 'GitHub'
+    },
+    {
+      id: 4,
+      title: 'Dev Stack Builder / Interactive Web App',
+      subtitle: 'Product Showcase & Cart',
+      image: './images/project-4.png',
+      monogram: 'DS',
+      alt: 'Interactive product showcase and cart web application screenshot',
       tech: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'Netlify'],
       description:
-        'Dynamic e-commerce product showcase and shopping cart system with real-time price calculation and state persistence.',
+        'Interactive product showcase and cart web application with dynamic filtering and state management.',
       highlights: [
         'Product catalogue rendered from typed data with category and price sorting controls',
-        'Real-time cart math (quantities, subtotals and grand total) driven by reducer-based state',
+        'Dynamic filtering paired with real-time cart math (quantities, subtotals and grand total)',
         'Cart state persisted to localStorage so it survives refreshes and browser restarts',
         'Blazing-fast Vite build with strict TypeScript and a fully responsive Tailwind layout'
       ],
@@ -330,7 +353,7 @@
       future: 'Adding live payment gateway integration and user review options.',
       live: 'https://creative-taiyaki-fba2bf.netlify.app/',
       repo: 'https://github.com/hasantanvir357/fifth-assignment',
-      repoLabel: 'Client Repo'
+      repoLabel: 'GitHub'
     }
   ];
 
