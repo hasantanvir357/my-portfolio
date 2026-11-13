@@ -19,6 +19,10 @@
   --radius-lg: 1rem;
   --radius-pill: 999px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Unified card micro-interaction tokens */
+  --border-hover: rgba(255, 255, 255, 0.35);
+  --glow-hover: 0 10px 30px -10px rgba(255, 255, 255, 0.14);
+  --shine: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.08), transparent);
 }
 
 *,
@@ -116,7 +120,12 @@ img {
   background: var(--c-card);
   color: var(--c-text);
   cursor: pointer;
-  transition: all var(--ease-out) 0.25s;
+  transition:
+    transform 0.2s ease-out,
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out,
+    color 0.2s ease-out,
+    box-shadow 0.2s ease-out;
   text-decoration: none;
   outline: none;
   white-space: nowrap;
@@ -125,11 +134,12 @@ img {
 .btn:hover {
   background: var(--c-card-strong);
   border-color: var(--c-border-strong);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-hover);
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
 }
 
 .btn:focus-visible {
@@ -229,13 +239,24 @@ img {
   color: var(--c-text-body);
   background: transparent;
   cursor: pointer;
-  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.2s ease-out,
+    color 0.2s ease-out,
+    border-color 0.2s ease-out,
+    background-color 0.2s ease-out,
+    box-shadow 0.2s ease-out;
 }
 
 .social-btn:hover {
   color: var(--c-text);
   border-color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-hover);
+}
+
+.social-btn:active {
+  transform: translateY(0) scale(0.94);
 }
 
 .social-btn-sm {
@@ -328,12 +349,17 @@ img {
   background: var(--c-card);
   color: var(--c-text);
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .menu-toggle:hover {
   background: var(--c-card-strong);
   border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.menu-toggle:active {
+  transform: translateY(0) scale(0.96);
 }
 
 @media (min-width: 768px) {
@@ -433,8 +459,16 @@ img {
 /* 10. Stats strip & tech pills
    ──────────────────────────────────────────────────────────────────────── */
 .stat-item {
+  position: relative;
+  overflow: hidden;
   text-align: center;
   padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .stat-value {
@@ -463,31 +497,36 @@ img {
   letter-spacing: 0.03em;
   color: var(--c-text-body);
   background: var(--c-card);
-  transition: all 0.2s ease;
+  transition:
+    transform 0.2s ease-out,
+    border-color 0.2s ease-out,
+    color 0.2s ease-out,
+    background-color 0.2s ease-out,
+    box-shadow 0.2s ease-out;
 }
 
 .pill:hover {
-  border-color: var(--c-border-strong);
+  border-color: var(--border-hover);
   color: var(--c-text);
   background: var(--c-card-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-hover);
 }
 
 /* 11. Projects
    ──────────────────────────────────────────────────────────────────────── */
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--c-card);
   border: 1px solid var(--c-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.project-card:hover {
-  border-color: var(--c-border-strong);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-  transform: translateY(-3px);
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* 16:9 widescreen thumbnail — full hero banner visible, no side cropping */
@@ -559,11 +598,16 @@ img {
   background: var(--c-card-strong);
   margin-right: 0.4rem;
   margin-bottom: 0.4rem;
+  transition:
+    transform 0.2s ease-out,
+    border-color 0.2s ease-out,
+    color 0.2s ease-out;
 }
 
 .tech-badge:hover {
   color: var(--c-text);
-  border-color: var(--c-border-strong);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
 }
 
 .line-clamp-3 {
@@ -588,12 +632,16 @@ img {
   border: 1px solid var(--c-border);
   border-radius: var(--radius-lg);
   padding: 1.25rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.card-hover:hover {
-  border-color: var(--c-border-strong);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+/* Hoverable cards get the glass shine layer (see §22) */
+.card-hover {
+  position: relative;
+  overflow: hidden;
 }
 
 .approach-num {
@@ -609,6 +657,7 @@ img {
   font-size: 0.8125rem;
   font-weight: 600;
   flex-shrink: 0;
+  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-icon {
@@ -621,6 +670,7 @@ img {
   background: var(--c-card-strong);
   color: var(--c-text-dim);
   margin-bottom: 0.75rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .card-icon svg {
@@ -631,6 +681,7 @@ img {
 /* 13. Contact
    ──────────────────────────────────────────────────────────────────────── */
 .contact-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -638,11 +689,11 @@ img {
   border-radius: var(--radius-lg);
   background: var(--c-card);
   border: 1px solid var(--c-border);
-  transition: border-color 0.25s ease;
-}
-
-.contact-card:hover {
-  border-color: var(--c-border-strong);
+  overflow: hidden;
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contact-card .card-icon {
@@ -670,10 +721,6 @@ img {
   background: rgba(24, 24, 27, 0.5); /* bg-zinc-900/50 */
   border-color: #27272a; /* border-zinc-800 */
   border-radius: 0.75rem; /* rounded-xl */
-}
-
-.contact-card.contact-card-wa:hover {
-  border-color: #3f3f46; /* zinc-700 */
 }
 
 .contact-card.contact-card-wa .card-icon {
@@ -785,12 +832,18 @@ img {
   background: var(--c-card-strong);
   color: var(--c-text-body);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .modal-close:hover {
   background: var(--c-border-strong);
   color: var(--c-text);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.modal-close:active {
+  transform: translateY(0) scale(0.94);
 }
 
 .modal-content {
@@ -965,10 +1018,7 @@ img {
   transform: translateY(0);
 }
 
-/* Keep card hover-lift working on top of the reveal state */
-.project-card.reveal.in-view:hover {
-  transform: translateY(-3px);
-}
+/* Keep card hover-lift working on top of the reveal state (see §22) */
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
@@ -998,7 +1048,7 @@ img {
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease-out, background 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .back-to-top.visible,
@@ -1015,6 +1065,11 @@ img {
 .back-to-top:hover {
   background: var(--c-border-strong);
   border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.94);
 }
 
 /* 20. Toast
@@ -1070,5 +1125,99 @@ img {
 
   .stat-item {
     min-width: 40%;
+  }
+}
+
+/* 22. Unified card micro-interaction — lift · glow · shine sweep
+   ────────────────────────────────────────────────────────────────────────
+   One shared behaviour for every interactive card:
+     • physics lift   : translateY(-4px)  + active scale(0.98)
+     • ambient glow   : white border      + soft white outer glow
+     • glass shine    : diagonal gradient sweeping left → right on hover
+   Reveal-staggered cards must answer instantly on hover, so the JS-set
+   transition-delay is neutralised while hovered (no background flicker). */
+
+.project-card::before,
+.card-hover::before,
+.contact-card::before,
+.stat-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--shine);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-out);
+  pointer-events: none;
+}
+
+.project-card:hover::before,
+.card-hover:hover::before,
+.contact-card:hover::before,
+.stat-item:hover::before {
+  transform: translateX(100%);
+}
+
+.project-card:hover,
+.project-card.reveal.in-view:hover,
+.card-hover:hover,
+.card-hover.reveal.in-view:hover,
+.contact-card:hover,
+.contact-card.reveal.in-view:hover,
+.stat-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--glow-hover);
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.6s ease;
+  transition-delay: 0ms !important;
+}
+
+.project-card:active,
+.project-card.reveal.in-view:active,
+.card-hover:active,
+.card-hover.reveal.in-view:active,
+.contact-card:active,
+.contact-card.reveal.in-view:active,
+.stat-item:active {
+  transform: translateY(-4px) scale(0.98);
+  transition-delay: 0ms !important;
+}
+
+/* Nested badges answer with the same calm glow */
+.card-hover:hover .approach-num {
+  border-color: var(--border-hover);
+  color: var(--c-text);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+.contact-card:hover .card-icon {
+  color: var(--c-text);
+  background: var(--c-border-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .card,
+  .contact-card,
+  .stat-item,
+  .pill,
+  .tech-badge,
+  .btn,
+  .social-btn,
+  .menu-toggle,
+  .modal-close,
+  .back-to-top {
+    transition: none !important;
+  }
+
+  .project-card::before,
+  .card-hover::before,
+  .contact-card::before,
+  .stat-item::before {
+    transition: none !important;
   }
 }
